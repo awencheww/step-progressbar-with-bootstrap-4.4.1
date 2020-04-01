@@ -1,0 +1,103 @@
+:root {
+  --box-shadow: #a7f8a7cc;
+  --bg-active: #04a139;
+  --bg-return: #dc3545;
+}
+ul {
+  list-style-type: none;
+}
+.progressbar {
+  margin-top: 2rem;
+  counter-reset: step;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progressbar li {
+  align-items: center;
+}
+.progressbar li:last-child {
+  display: none;
+}
+.container {
+  position: relative;
+  min-width: 120px;
+  right: 45px;
+  font-size: .7em;
+  font-weight: 200;
+}
+
+.line {
+  display: flex;
+  justify-content: space-around;
+  width: 130px;
+  height: .2em;
+  background-color: #222222;
+  position: relative;
+  display: flex;
+  align-items: center;
+  transition: all 800ms ease;
+  z-index: -1;
+}
+
+.circle {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 1.5em;
+  border-radius: 50%;
+  border: .12em solid #222222;
+  transition: all 1000ms ease;
+  z-index: 1;
+}
+
+.circle:before {
+  content: counter(step);
+  counter-increment: step;
+  font-weight: 200;
+}
+
+.circle .title {
+  width: 100%;
+  line-height: 3;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+div .col p {
+  margin-bottom: 0;
+}
+div .col {
+  margin-bottom: .5em;
+  max-width: 90%;
+}
+div .col p>.badge {
+  width: 60%;
+  line-height: 1;
+  font-size: .8em;
+}
+
+.active {
+  border: .1em solid var(--box-shadow);
+  background-color: #5cb85c;
+}
+
+.-active {
+  box-shadow: 0px 0px 3px 1px #5cb85c;
+  font-weight: 400;
+}
+
+.return {
+  border: .1em solid var(--bg-return);
+  background-color: #dc3545;
+}
+.-return {
+  box-shadow: 0px 0px 3px 1px #ff9494;
+  font-weight: 400;
+}
+
+.blue { background-color: #52a5ff; }
+.green{ background-color: #5cb85c; }
+.red { background-color: #ff9494; }
+.grey { background-color: #e1e1e1; }
